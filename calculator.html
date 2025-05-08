@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carbon Footprint Calculator - Climate Action</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo"><i class="fas fa-leaf" style="color: #2E7D32; margin-right: 8px;"></i>Climate Action</div>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="information.html">Learn More</a></li>
+                <li><a href="action.html">Take Action</a></li>
+                <li><a href="calculator.html" class="active">Carbon Calculator</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="calculator-header">
+            <div class="calculator-header-content">
+                <h1>Carbon Footprint Calculator</h1>
+                <p>Measure your impact on the environment</p>
+            </div>
+        </section>
+
+        <section class="calculator-section">
+            <h2>Calculate Your Carbon Footprint</h2>
+            <p>Use this interactive calculator to estimate your annual carbon footprint based on your lifestyle choices. This is a simplified version to give you a general idea of your impact.</p>
+            
+            <div class="calculator-form">
+                <form id="carbon-calculator-form">
+                    <div class="form-group">
+                        <div class="form-group-header">
+                            <svg class="category-icon" width="40" height="40" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path fill="currentColor" d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z"/>
+                            </svg>
+                            <div>
+                                <label for="transportation">Transportation</label>
+                                <p class="form-description">How do you typically travel?</p>
+                            </div>
+                        </div>
+                        <select id="transportation" name="transportation" required>
+                            <option value="1">Mostly walk, bike, or public transit</option>
+                            <option value="5">Mix of public transit and car</option>
+                            <option value="10">Mostly drive a fuel-efficient car</option>
+                            <option value="15">Mostly drive an SUV or large vehicle</option>
+                            <option value="20">Frequent air travel</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="form-group-header">
+                            <svg class="category-icon" width="40" height="40" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path fill="currentColor" d="M11 21h-1l1-7H7.5c-.58 0-.57-.32-.38-.66.19-.34.05-.08.07-.12C8.48 10.94 10.42 7.54 13 3h1l-1 7h3.5c.49 0 .56.33.47.51l-.07.15C12.96 17.55 11 21 11 21z"/>
+                            </svg>
+                            <div>
+                                <label for="electricity">Home Energy Use</label>
+                                <p class="form-description">How would you describe your home energy consumption?</p>
+                            </div>
+                        </div>
+                        <input type="range" id="electricity" name="electricity" min="1" max="10" value="5" required>
+                        <div class="range-labels">
+                            <span>Very efficient</span>
+                            <span>Average</span>
+                            <span>High usage</span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="form-group-header">
+                            <svg class="category-icon" width="40" height="40" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path fill="currentColor" d="M20 3H4v10c0 2.21 1.79 4 4 4h6c2.21 0 4-1.79 4-4v-3h2c1.11 0 2-.89 2-2V5c0-1.11-.89-2-2-2zm0 5h-2V5h2v3zM4 19h16v2H4z"/>
+                            </svg>
+                            <div>
+                                <label for="diet">Diet</label>
+                                <p class="form-description">What best describes your diet?</p>
+                            </div>
+                        </div>
+                        <select id="diet" name="diet" required>
+                            <option value="1">Plant-based/Vegan</option>
+                            <option value="3">Vegetarian</option>
+                            <option value="5">Pescatarian</option>
+                            <option value="7">Omnivore (moderate meat)</option>
+                            <option value="10">Meat with most meals</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="form-group-header">
+                            <svg class="category-icon" width="40" height="40" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path fill="currentColor" d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/>
+                            </svg>
+                            <div>
+                                <label for="consumption">Consumer Habits</label>
+                                <p class="form-description">How would you describe your shopping habits?</p>
+                            </div>
+                        </div>
+                        <select id="consumption" name="consumption" required>
+                            <option value="1">Minimal - I buy only what I need and focus on secondhand</option>
+                            <option value="5">Moderate - I'm thoughtful but do buy new items regularly</option>
+                            <option value="10">High - I frequently shop for new items</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Calculate My Footprint</button>
+                </form>
+            </div>
+
+            <div class="calculator-result">
+                <h3>Your Estimated Carbon Footprint</h3>
+                <div class="result-number"><span id="result-value">0</span> tons CO₂e/year</div>
+                <p class="result-text" id="result-feedback"></p>
+                <div class="result-actions">
+                    <button id="reset-calculator" class="btn btn-secondary">Reset Calculator</button>
+                    <a href="action.html" class="btn btn-primary">See How to Reduce</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Climate Action</h4>
+                <p>Working together for a sustainable future.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="information.html">Information</a></li>
+                    <li><a href="action.html">Take Action</a></li>
+                    <li><a href="calculator.html">Carbon Calculator</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Connect With Us</h4>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 Climate Action. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
